@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+		<style>
+			body{
+				margin:0;
+				padding:0;
+				overflow:hidden;
+			}
+			#container{
+				height:100%;
+				width:100%;
+				overflow:hidden;
+			}
+			#video{
+				width:auto;
+				height:100%;
+				position:absolute;
+			}
+			#btn{
+				position:absolute;
+				z-index:2;
+				bottom:10%;
+				left:50%;
+				transform:translateX(-50%);
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="container">
+			<video id="video" autoplay></video>
+		</div>
+		
+		<script>
+			const video=document.getElementById('video');
+			const canvas=document.getElementById('canvas');
+			const btn=document.getElementById('btn');
+			
+			const cam=new Webcam(video, "user", canvas);
+			cam.start();
+		</script>
+	</body>
+</html>
